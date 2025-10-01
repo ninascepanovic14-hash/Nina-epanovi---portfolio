@@ -105,7 +105,7 @@
     .opis {
       background: linear-gradient(white, #c76d00, black);
       text-align: center;
-      padding: 490px 490px;
+      padding: 490px 490px; /* desktop padding ostaje */
       font-size: 0.9rem;
       line-height: 1.7;
       color: white;
@@ -157,7 +157,6 @@
       text-align: left;     
     }
 
-
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -176,8 +175,9 @@
         height: auto;
       }
 
+      /* responsive padding za .opis */
       .opis {
-        padding: 40px 20px;
+        padding: 25px; 
         font-size: 0.85rem;
       }
 
@@ -200,24 +200,24 @@
 <body>
 
   <header>
-  <div class="left">Nina Šćepanović</div>
-  <div class="right">
-    <div class="dropdown">
-      <a href="#" class="dropbtn" id="portfolioBtn">portfolio</a>
-      <div class="dropdown-content" id="portfolioMenu">
-        <a href="charcoal-on-kraft-paper.html">charcoal on kraft paper</a>
-        <a href="photography.html">photography</a>
-        <a href="fanzine-body.html">fanzine - body</a>
-        <a href="digital.html">digital & motion</a>
-        <a href="fanzine-horizon.html">fanzine - horizon</a>
-        <a href="comics.html">comics</a>
-        <a href="paintings.html">paintings</a>
-        <a href="posters.html">posters</a>
-        <a href="fanzine-silence.html">fanzine - silence</a>
+    <div class="left">Nina Šćepanović</div>
+    <div class="right">
+      <div class="dropdown">
+        <a href="#" class="dropbtn" id="portfolioBtn">portfolio</a>
+        <div class="dropdown-content" id="portfolioMenu">
+          <a href="charcoal-on-kraft-paper.html">charcoal on kraft paper</a>
+          <a href="photography.html">photography</a>
+          <a href="fanzine-body.html">fanzine - body</a>
+          <a href="digital.html">digital & motion</a>
+          <a href="fanzine-horizon.html">fanzine - horizon</a>
+          <a href="comics.html">comics</a>
+          <a href="paintings.html">paintings</a>
+          <a href="posters.html">posters</a>
+          <a href="fanzine-silence.html">fanzine - silence</a>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <section class="hero">
     <model-viewer src="modeli/radni prostor.glb"
@@ -377,20 +377,19 @@
 
   <script>
     const portfolioBtn = document.getElementById('portfolioBtn');
-const portfolioMenu = document.getElementById('portfolioMenu');
+    const portfolioMenu = document.getElementById('portfolioMenu');
 
-portfolioBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  portfolioMenu.style.display = portfolioMenu.style.display === 'flex' ? 'none' : 'flex';
-});
+    portfolioBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      portfolioMenu.style.display = portfolioMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
 
-window.addEventListener('click', function(e) {
-  if (!portfolioBtn.contains(e.target) && !portfolioMenu.contains(e.target)) {
-    portfolioMenu.style.display = 'none';
-  }
-});
+    window.addEventListener('click', function(e) {
+      if (!portfolioBtn.contains(e.target) && !portfolioMenu.contains(e.target)) {
+        portfolioMenu.style.display = 'none';
+      }
+    });
   </script>
-
 
 </body>
 </html>
