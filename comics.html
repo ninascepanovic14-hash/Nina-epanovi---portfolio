@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>comics</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Ambit;
+      background: white;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* visina ekrana */
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      font-size: 1rem;
+      font-weight: bold;
+      background: white;
+      z-index: 10;
+    }
+
+    header a {
+      color: black;
+      text-decoration: none;
+    }
+
+    header .right a {
+      color: black;             
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s ease, transform 0.3s ease; 
+      display: inline-block;       
+    }
+
+    header .right a:hover {
+      color: #c76d00;               
+      transform: scale(1.05);     
+    }
+
+    .main-content {
+      flex: 1; 
+      margin-top: 140px; 
+    }
+
+    .series {
+      margin-bottom: 220px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    .series h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .series p {
+      font-size: 0.85rem;
+      line-height: 1.3;
+      text-align: left;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #c76d00;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 90%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 16px;
+      font-size: 2rem;
+      color: black; 
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      user-select: none;
+    }
+
+    .prev { left: -220px; }
+    .next { right: -220px; }
+
+    .coming-soon {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 0.7rem;
+      color: #555;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
+
+      .main-content {
+        margin-top: 100px; 
+      }
+
+      .series {
+        margin-bottom: 120px;
+        padding: 0 15px;
+      }
+
+      .series h2 {
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .series p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        text-align: left;
+      }
+
+      .slideshow-container {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .slide img {
+        max-height: 60vh;
+      }
+
+      .prev, .next {
+        font-size: 1.5rem;
+        padding: 10px;
+      }
+
+      .prev { left: 10px; }
+      .next { right: 10px; }
+
+      .coming-soon {
+        font-size: 0.65rem;
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="left">comics</div>
+    <div class="right"><a href="index.html">portfolio</a></div>
+  </header>
+
+  <div class="main-content">
+
+    <div class="series">
+      <h2>our shared memories</h2>
+      <p>This hand-drawn comic series celebrates the cherished moments spent with my grandmother, capturing both small, everyday joys and meaningful shared experiences. Each page tells a story from our lives together, accompanied by a detailed illustration highlighting a key element from that scene—a gesture, an object, or a setting that stands out. After the cover, space is left for a dedication text, adding a personal and intimate layer to the narrative. The series intertwines memory and illustration, creating a tender visual journey through our shared history.</p>
+      <div class="slideshow-container" id="series1">
+        <div class="slide"><img src="6 - comics/1/3.jpg" alt="photo 3"></div>
+        <div class="slide"><img src="6 - comics/1/4.png" alt="photo 4"></div>
+        <div class="slide"><img src="6 - comics/1/5.png" alt="photo 5"></div>
+        <div class="slide"><img src="6 - comics/1/6.png" alt="photo 6"></div>
+        <div class="slide"><img src="6 - comics/1/7.png" alt="photo 7"></div>
+        <div class="slide"><img src="6 - comics/1/8.png" alt="photo 8"></div>
+        <div class="slide"><img src="6 - comics/1/9.png" alt="photo 9"></div>
+        <div class="slide"><img src="6 - comics/1/10.png" alt="photo 10"></div>
+        
+        <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+      </div>
+    </div>
+
+    <div class="series">
+      <h2>Reflected perspective</h2>
+      <p>Through this series, I explored my house and its surroundings through close-up photography. Each image captures the reflection of my home in a single raindrop left in the yard after rain. Within these tiny mirrored worlds, an intricate alternate universe emerges, offering a fresh perspective on familiar spaces and allowing viewers to experience everyday surroundings in a new way.</p>
+      <div class="slideshow-container" id="series2">
+        <div class="slide"><img src="6 - comics/2/1.png" alt="photo 1"></div>
+        <div class="slide"><img src="6 - comics/2/2.png" alt="photo 2"></div>
+        <div class="slide"><img src="6 - comics/2/3.png" alt="photo 3"></div>
+        <div class="slide"><img src="6 - comics/2/4.png" alt="photo 4"></div>
+        <div class="slide"><img src="6 - comics/2/5.png" alt="photo 5"></div>
+        <div class="slide"><img src="6 - comics/2/6.png" alt="photo 6"></div>
+        <div class="slide"><img src="6 - comics/2/7.png" alt="photo 7"></div>
+        <div class="slide"><img src="6 - comics/2/8.png" alt="photo 8"></div>
+        <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+      </div>
+    </div>
+
+  </div> 
+
+  <div class="coming-soon">
+    new projects are yet to come...
+  </div>
+
+  <script>
+    const slideIndices = [1,1,1,1,1];
+    const seriesIds = ["series1","series2"];
+
+    showSlides(1, 1);
+    showSlides(1, 2);
+
+    function plusSlides(n, seriesNo) {
+      showSlides(slideIndices[seriesNo-1] += n, seriesNo);
+    }
+
+    function showSlides(n, seriesNo) {
+      let i;
+      const slides = document.querySelectorAll(`#${seriesNo > 0 ? seriesIds[seriesNo-1] : ''} .slide`);
+      if (n > slides.length) { slideIndices[seriesNo-1] = 1 }
+      if (n < 1) { slideIndices[seriesNo-1] = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndices[seriesNo-1]-1].style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

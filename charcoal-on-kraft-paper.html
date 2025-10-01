@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>charcoal on kraft paper</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Ambit;
+      background: white;
+      color: black;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      font-size: 1rem;
+      font-weight: bold;
+      background: white;
+      z-index: 10;
+    }
+
+    header a {
+      color: black;
+      text-decoration: none;
+    }
+
+    header .right a {
+      color: black;            
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s ease, transform 0.3s ease; 
+      display: inline-block;   
+    }
+
+    header .right a:hover {
+      color: #c76d00;            
+      transform: scale(1.05);       
+    }
+
+    .description {
+      margin-top: 120px; 
+      margin-bottom: 40px;
+      text-align: left;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #c76d00;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 90%;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 16px;
+      font-size: 2rem;
+      color: black;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      user-select: none;
+    }
+
+    .prev {
+      left: 200px; 
+    }
+
+    .next {
+      right: 200px;  
+    }
+
+    .coming-soon {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 0.7rem;
+      color: #555;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
+
+      .main-content {
+        margin-top: 100px; 
+      }
+
+      .series {
+        margin-bottom: 120px;
+        padding: 0 15px;
+      }
+
+      .series h2 {
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .series p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        text-align: left;
+      }
+
+      .slideshow-container {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .slide img {
+        max-height: 60vh; 
+      }
+
+      .prev, .next {
+        font-size: 1.5rem;
+        padding: 10px;
+      }
+
+      .prev { left: 10px; }
+      .next { right: 10px; }
+
+      .coming-soon {
+        font-size: 0.65rem;
+        padding: 0 10px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="left">charcoal on kraft paper</div>
+    <div class="right"><a href="index.html">portfolio</a></div>
+  </header>
+
+  <div class="description">
+    This series of charcoal drawings on kraft paper explores both figure and still life studies. Each work examines the subtle balance between proportion, form, and light, using the expressive qualities of charcoal to emphasize contrasts between shadow and illumination. The raw texture of kraft paper enhances the depth of the drawings, creating a dialogue between material and subject that reflects the process of careful observation and exploration.
+  </div>
+
+  <div class="slideshow-container">
+    <!-- 12 PNG slika iz foldera "1 - rolna" -->
+    <div class="slide"><img src="1 - rolna/1.png" alt="rad 1"></div>
+    <div class="slide"><img src="1 - rolna/2.png" alt="rad 2"></div>
+    <div class="slide"><img src="1 - rolna/3.png" alt="rad 3"></div>
+    <div class="slide"><img src="1 - rolna/4.png" alt="rad 4"></div>
+    <div class="slide"><img src="1 - rolna/5.png" alt="rad 5"></div>
+    <div class="slide"><img src="1 - rolna/6.png" alt="rad 6"></div>
+    <div class="slide"><img src="1 - rolna/7.png" alt="rad 7"></div>
+    <div class="slide"><img src="1 - rolna/8.png" alt="rad 8"></div>
+    <div class="slide"><img src="1 - rolna/9.png" alt="rad 9"></div>
+    <div class="slide"><img src="1 - rolna/10.png" alt="rad 10"></div>
+    <div class="slide"><img src="1 - rolna/11.png" alt="rad 11"></div>
+    <div class="slide"><img src="1 - rolna/12.png" alt="rad 12"></div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <div class="coming-soon">
+    new projects are yet to come...
+  </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName("slide");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

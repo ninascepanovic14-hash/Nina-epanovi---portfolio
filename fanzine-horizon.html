@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fanzine - horizon</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Ambit;
+      background: white;
+      color: black;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      font-size: 1rem;
+      font-weight: bold;
+      background: white;
+      z-index: 10;
+    }
+
+    header a {
+      color: black;
+      text-decoration: none;
+    }
+
+    header .right a {
+      color: black;                 
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s ease, transform 0.3s ease; 
+      display: inline-block;        
+    }
+
+    header .right a:hover {
+      color: #c76d00;               
+      transform: scale(1.05);       
+    }
+
+    .content {
+      margin-top: 120px; 
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    video {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 90px; 
+    }
+
+    .description {
+      text-align: left;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      max-width: 700px;
+      margin: 0 auto 90px auto; 
+      color: #c76d00;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 90%;
+      margin: 0 auto 140px; 
+      text-align: center;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 16px;
+      font-size: 2rem;
+      color: black;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      user-select: none;
+    }
+
+    .prev { left: -170px; }
+    .next { right: -170px; }
+
+    .coming-soon {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 0.7rem;
+      color: #555;
+      font-style: italic;
+    }    
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.9rem;
+        padding: 10px 15px;
+      }
+
+      .content {
+        margin-top: 100px;
+        padding: 0 10px;
+      }
+
+      .description {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 50px;
+      }
+
+      video {
+        width: 100%;
+        max-height: 50vh;
+        margin-bottom: 40px;
+      }
+
+      .slideshow-container {
+        max-width: 100%;
+        margin: 0 auto 20px;
+      }
+
+      .slide img {
+        max-height: 50vh;
+      }
+
+      .prev, .next {
+        font-size: 1.5rem;
+        padding: 10px;
+        left: 5px;
+        right: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="left">fanzine - horizon</div>
+    <div class="right"><a href="index.html">portfolio</a></div>
+  </header>
+
+  <div class="content">
+
+    <div class="description">
+      "Horizon" is a fanzine that explores the horizon as both a visual line and a metaphor for life’s unfolding. Its folding format mirrors the way a horizon expands and shifts, while three horizons—red, yellow, and blue—reflect different sensibilities, from calm to vibrant. Within white squares appear illustrations, textures, photographs, and reflective surfaces, symbolizing emotions, experiences, and introspection. Some squares are intentionally left blank, inviting readers to inscribe their own experiences that have shaped their personal horizon, creating a unique dialogue between the work and its audience. Set against a black background that represents the unknown future, the horizons also intersect and change through encounters with others, emphasizing their fluid and ever-evolving nature.
+    </div>
+
+    <div class="slideshow-container">
+      <div class="slide"><img src="5 - fanzine horizon/1.png" alt="photo 1"></div>
+      <div class="slide"><img src="5 - fanzine horizon/2.png" alt="photo 2"></div>
+      <div class="slide"><img src="5 - fanzine horizon/3.png" alt="photo 3"></div>
+      <div class="slide"><img src="5 - fanzine horizon/4.png" alt="photo 4"></div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </div>
+
+  <div class="coming-soon">
+    new projects are yet to come...
+  </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName("slide");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
