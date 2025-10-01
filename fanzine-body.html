@@ -19,6 +19,7 @@
       right: 0;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 20px 40px;
       font-size: 1rem;
       font-weight: bold;
@@ -50,10 +51,11 @@
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+      padding: 0 15px; /* 15px razmaka od ivica */
     }
 
     video {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       margin-bottom: 80px; 
     }
@@ -65,12 +67,13 @@
       max-width: 700px;
       margin: 0 auto 90px auto; 
       color: #c76d00;
+      padding: 0 15px; /* 15px razmaka od ivica */
     }
 
     .slideshow-container {
       position: relative;
-      max-width: 90%;
-      margin: 0 auto 10px; 
+      max-width: 100%;
+      margin: 0 auto 20px; 
       text-align: center;
     }
 
@@ -106,6 +109,7 @@
       font-size: 0.7rem;
       color: #555;
       font-style: italic;
+      padding: 0 15px;
     }    
 
     @media (max-width: 768px) {
@@ -118,7 +122,7 @@
 
       .content {
         margin-top: 100px;
-        padding: 0 10px;
+        padding: 0 15px;
       }
 
       .description {
@@ -128,14 +132,12 @@
       }
 
       video {
-        width: 100%;
         max-height: 50vh;
         margin-bottom: 40px;
       }
 
       .slideshow-container {
         max-width: 100%;
-        margin: 0 auto 20px;
       }
 
       .slide img {
@@ -147,6 +149,11 @@
         padding: 10px;
         left: 5px;
         right: 5px;
+      }
+
+      .coming-soon {
+        font-size: 0.65rem;
+        padding: 20px 15px;
       }
     }
   </style>
@@ -201,11 +208,10 @@
     }
 
     function showSlides(n) {
-      let i;
       const slides = document.getElementsByClassName("slide");
-      if (n > slides.length) { slideIndex = 1 }
-      if (n < 1) { slideIndex = slides.length }
-      for (i = 0; i < slides.length; i++) {
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+      for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
       slides[slideIndex-1].style.display = "block";
