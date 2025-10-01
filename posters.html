@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      font-family: Ambit;
+      font-family: Ambit, sans-serif;
       background: white;
       color: black;
       display: flex;
@@ -22,38 +22,34 @@
       right: 0;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 20px 40px;
       font-size: 1rem;
       font-weight: bold;
       background: white;
       z-index: 10;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     }
 
     header a {
       color: black;
       text-decoration: none;
-    }
-
-    header .right a {
-      color: black;                 
-      text-decoration: none;
-      cursor: pointer;
       transition: color 0.3s ease, transform 0.3s ease;
-      display: inline-block;        
     }
 
-    header .right a:hover {
-      color: #c76d00;              
-      transform: scale(1.05);       
+    header a:hover {
+      color: #c76d00;
+      transform: scale(1.05);
     }
 
     .main-content {
       flex: 1;
       margin-top: 140px;
+      padding: 0 15px;
     }
 
     .series {
-      margin-bottom: 220px;
+      margin-bottom: 120px;
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
@@ -61,15 +57,15 @@
     }
 
     .series h2 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
       text-align: center;
+      text-transform: uppercase;
     }
 
     .series p {
-      font-size: 0.85rem;
-      line-height: 1.3;
-      text-align: left;
+      font-size: 0.9rem;
+      line-height: 1.5;
       margin-bottom: 30px;
       max-width: 700px;
       margin-left: auto;
@@ -82,12 +78,13 @@
       max-width: 60%;
       margin: 0 auto 50px auto;
       object-fit: contain;
+      border-radius: 6px;
     }
 
     .slideshow-container {
       position: relative;
       max-width: 90%;
-      margin: 0 auto 10px; 
+      margin: 0 auto 50px auto;
       text-align: center;
     }
 
@@ -99,6 +96,7 @@
       max-width: 60%;
       max-height: 80vh;
       object-fit: contain;
+      border-radius: 6px;
     }
 
     .prev, .next {
@@ -114,18 +112,25 @@
       user-select: none;
     }
 
-    .coming-soon {
-      text-align: center;
-      margin: 20px 0;
-      font-size: 0.7rem;
-      color: #555;
-      font-style: italic;
-    }    
-
     .prev { left: -170px; }
     .next { right: -170px; }
 
+    .coming-soon {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 0.7rem;
+      color: #555;
+      font-style: italic;
+    }
+
     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+      }
+
       .prev, .next {
         left: 10px !important;
         right: 10px !important;
@@ -136,8 +141,11 @@
       .series img, .slide img {
         max-width: 90%;
       }
-    }
 
+      .series p {
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -151,17 +159,16 @@
 
     <div class="series">
       <h2>biogor</h2>
-      <p>This poster, created collaboratively with a small group of colleagues, showcases an experimental custom typeface designed for Hotel Biograd. Key local tourist attractions are presented in this fluid, reflective font across the main body of the poster, while the same names appear in a more legible typeface in the corners for clarity. The typeface’s flowing, distorted forms mimic the movement of light on water, creating a playful, interactive experience where viewers engage with the poster to locate and interpret the names of attractions. The design blends graphic experimentation with functional information, turning the poster into both a visual artwork and an exploratory guide.</p>
-      <img src="8 - posters/1.png" alt="photo 1">
+      <p>This poster, created collaboratively with colleagues, showcases an experimental custom typeface designed for Hotel Biograd, blending graphic experimentation with functional information.</p>
+      <img src="8 - posters/1.png" alt="Biogor poster">
     </div>
 
     <div class="series">
       <h2>bodoni</h2>
-      <p>This project consists of two posters functioning as a diptych, exploring the Bodoni typeface and its striking contrast between thick and thin strokes. One poster highlights the bold, heavy elements of the letters against a dark grey background, while the other emphasizes the delicate, thin lines on a white background. Each composition isolates and magnifies parts of the letters, creating a visual dialogue that showcases the elegance and dynamic tension inherent in the Bodoni font.</p>
-
-      <div class="slideshow-container" id="series-slider">
-        <div class="slide" style="display:block;"><img src="8 - posters/2.jpg" alt="photo 2"></div>
-        <div class="slide"><img src="8 - posters/3.jpg" alt="photo 3"></div>
+      <p>This diptych explores the Bodoni typeface, highlighting contrast between thick and thin strokes, creating a visual dialogue of elegance and dynamic tension.</p>
+      <div class="slideshow-container" id="bodoni-slider">
+        <div class="slide" style="display:block;"><img src="8 - posters/2.jpg" alt="Bodoni poster 1"></div>
+        <div class="slide"><img src="8 - posters/3.jpg" alt="Bodoni poster 2"></div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
@@ -169,26 +176,26 @@
 
     <div class="series">
       <h2>poaro</h2>
-      <p>This poster presents the silhouette of Poirot, the seasoned detective, as he navigates a path lined with references to various murders. The red traces in the background subtly suggest the crimes he encounters, reflecting how his life is continually intertwined with solving mysteries. The composition emphasizes his perpetual presence at the scene of the crime, evoking suspense and the inevitability of his investigative journey.</p>
-      <img src="8 - posters/4.jpg" alt="photo 1">
+      <p>This poster presents Poirot navigating a path lined with references to various murders, emphasizing his perpetual presence and the suspenseful narrative.</p>
+      <img src="8 - posters/4.jpg" alt="Poaro poster">
     </div>
 
     <div class="series">
       <h2>superego</h2>
-      <p>This cover design for Super Ego magazine, dedicated to product design, visually conveys the magazine’s unique sensibility by digitally manipulating the photograph of one of the featured objects. The composition blends graphic design with photography to create a striking, conceptual representation of the magazine’s focus on aesthetics, innovation, and design thinking.</p>
-      <img src="8 - posters/5.png" alt="photo 1">
+      <p>Cover design for Super Ego magazine, blending graphic design and photography for a striking, conceptual representation of the magazine's focus.</p>
+      <img src="8 - posters/5.png" alt="Superego cover">
     </div>
 
     <div class="series">
       <h2>sweet sixteen</h2>
-      <p>Sweet Sixteen is a poster printed on a risograph in yellow and purple, depicting the lively atmosphere of a sixteenth birthday celebration. The composition illustrates the threshold between childhood and maturity, with a crowd of people in the background celebrating, while the flames of the birthday candles reflect the celebrant’s wishes, for family health, togetherness, and guidance in choosing the right path in life. The imagery symbolizes the transition into a period of personal growth and self-discovery, combining emotional depth with playful celebration.</p>
-      <img src="8 - posters/6.jpg" alt="photo 1">
+      <p>Poster printed on risograph depicting a sixteenth birthday celebration, symbolizing the transition from childhood to personal growth and self-discovery.</p>
+      <img src="8 - posters/6.jpg" alt="Sweet Sixteen poster">
     </div>
 
     <div class="series">
       <h2>collage self-porter</h2>
-      <p>This self-portrait is a mixed-media collage composed of various papers and illustrations layered to represent different periods of life and facets of personality. The background features a cheerful figure on a yellow backdrop, symbolizing a playful and childlike spirit. Over it lies a dark blue layer depicting a contemplative figure, reflecting introspection and overthinking, while the topmost dark grey layer presents a serious, mature self. The overlapping composition visually narrates the complexity of personal growth, emotional depth, and the multiple selves that coexist within a single individual.</p>
-      <img src="8 - posters/7.jpg" alt="photo 1">
+      <p>Mixed-media self-portrait collage representing different life periods and facets of personality through layered illustrations and colors.</p>
+      <img src="8 - posters/7.jpg" alt="Collage self-porter">
     </div>
 
   </div> 
@@ -206,13 +213,10 @@
     }
 
     function showSlides(n) {
-      let i;
-      const slides = document.getElementsByClassName("slide");
+      const slides = document.querySelectorAll("#bodoni-slider .slide");
       if (n > slides.length) { slideIndex = 1 }
       if (n < 1) { slideIndex = slides.length }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
+      slides.forEach(slide => slide.style.display = "none");
       slides[slideIndex-1].style.display = "block";
     }
   </script>
