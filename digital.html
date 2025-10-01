@@ -8,6 +8,8 @@
     body {
       margin: 0;
       font-family: Ambit;
+      background: white;
+      color: black;
     }
 
     header {
@@ -16,7 +18,8 @@
       left: 0;
       right: 0;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between; /* levo-desno u istom redu */
+      align-items: center;            /* vertikalno poravnanje */
       padding: 20px 40px;
       font-size: 1rem;
       font-weight: bold;
@@ -44,7 +47,7 @@
     }
 
     section {
-      padding: 180px 20px 140px 20px;
+      padding: 180px 40px 140px 40px;
     }
 
     .container {
@@ -70,32 +73,6 @@
       max-width: 600px;
       text-align: left;
       color: #c76d00;
-    }
-
-    /* fade prelazi */
-    .white-section {
-      background: white;
-      color: black;
-    }
-
-    .fade-to-orange {
-      height: 400px;
-      background: linear-gradient(white, #c76d00);
-    }
-
-    .orange-section {
-      background: #c76d00;
-      color: white;
-    }
-
-    .fade-to-black {
-      height: 400px;
-      background: linear-gradient(#c76d00, black);
-    }
-
-    .black-section {
-      background: black;
-      color: white;
     }
 
     .slideshow-container {
@@ -145,15 +122,6 @@
       border-radius: 12px;
     }
 
-    .black-section h3 {
-      margin-top: 80px;
-    }
-
-    .black-section p {
-      color: #c76d00;
-      margin-bottom: 40px;
-    }
-
     video {
       width: 90%;
       max-width: 1000px;
@@ -165,7 +133,7 @@
       text-align: center;
       background: black;
       color: #c76d00;
-      padding: 80px 20px;
+      padding: 80px 40px;
       font-size: 0.7rem;
       font-style: italic;
     }
@@ -175,7 +143,7 @@
         flex-direction: column;
         align-items: flex-start;
         font-size: 0.9rem;
-        padding: 10px 20px;
+        padding: 10px 15px;
       }
 
       section {
@@ -194,6 +162,7 @@
         font-size: 0.8rem;
         line-height: 1.4;
         margin-bottom: 20px;
+        padding: 0 15px; /* 15px razmaka od ivica */
       }
 
       .slideshow-container {
@@ -240,132 +209,20 @@
     <div class="right"><a href="index.html">portfolio</a></div>
   </header>
 
-  <!-- Illustrations -->
   <section class="white-section" id="white">
     <div class="container">
-
+      <!-- Ovde ide sadržaj ilustracija, animacija, modela -->
+      <!-- Primer jedne sekcije -->
       <div class="work">
         <h3>abstract fairy tale</h3>
-        <p>The traditional fairy tale Hansel and Gretel is reimagined through an abstract illustration style, focusing on its key scenes. Abstract characters and entire compositions were designed to convey the story’s atmosphere in a modern and symbolic way.</p>
+        <p>The traditional fairy tale Hansel and Gretel is reimagined through an abstract illustration style, focusing on its key scenes.</p>
         <div class="slideshow-container" data-slider="1">
           <div class="slide" style="display:block;"><img src="4 - digital/ilustracije/1.png" alt="illustration"></div>
           <div class="slide"><img src="4 - digital/ilustracije/2.png" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/3.png" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/4.png" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/5.png" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/6.png" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/7.png" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/8.png" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/9.png" alt="illustration"></div>
           <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
           <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
         </div>
       </div>
-
-      <div class="work">
-        <h3>critical visions</h3>
-        <p>This series of analog illustrations enhanced with digital processing explores key concepts from critical theory, translating complex philosophical texts into visual narratives. Drawing inspiration from thinkers such as Michel Foucault (Panopticism), Theodor Adorno & Max Horkheimer (The Culture Industry), Guy Debord (The Society of the Spectacle), Lev Manovich (The Language of New Media), and Zygmunt Bauman (Liquid Modernity), each illustration interprets the tensions between power, society, media, and modernity. The works aim to create a dialogue between theory and image, inviting viewers to reflect on contemporary cultural and social structures.</p>
-        <div class="slideshow-container" data-slider="2">
-          <div class="slide" style="display:block;"><img src="4 - digital/ilustracije/10.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/11.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/12.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/13.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/14.jpg" alt="illustration"></div>
-          <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
-        </div>
-      </div>
-
-      <div class="work">
-        <h3>imaginative houses</h3>
-        <p>This series of digital illustrations presents three imaginative houses, each situated in a unique environment filled with intricate details and playful elements. The compositions explore the interplay between space, architecture, and fantastical storytelling, inviting the viewer to get lost in the richness of each scene and discover hidden narratives within the abundance of detail.</p>
-        <div class="slideshow-container" data-slider="3">
-          <div class="slide" style="display:block;"><img src="4 - digital/ilustracije/15.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/16.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/17.jpg" alt="illustration"></div>
-          <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
-        </div>
-      </div>
-
-      <div class="work">
-        <h3>cloudcrafted characters</h3>
-        <p>This series of illustrations draws inspiration from photographs of the sky, transforming clouds into imaginative characters. Each artwork explores the creative process from the initial photograph to the final character design, highlighting the evolution from natural forms to unique, expressive figures.</p>
-        <div class="slideshow-container" data-slider="4">
-          <div class="slide" style="display:block;"><img src="4 - digital/ilustracije/18.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/19.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/20.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/21.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/22.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/23.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/24.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/25.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/26.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/27.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/28.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/29.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/30.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/31.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/32.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/33.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/34.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/35.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/36.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/37.jpg" alt="illustration"></div>
-          <div class="slide"><img src="4 - digital/ilustracije/38.jpg" alt="illustration"></div>
-          <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="fade-to-orange"></div>
-
-  <section class="orange-section" id="orange">
-    <div class="container">
-      <p>A collection of 3D models created in Blender, focusing on experimentation with form, materials, and textures. Each piece explores digital sculpting, spatial composition, and the interplay between surfaces and light, highlighting the creative possibilities of three-dimensional design.</p>
-      <div class="model-grid">
-        <model-viewer src="4 - digital/modeli/1.glb" camera-controls auto-rotate></model-viewer>
-        <model-viewer src="4 - digital/modeli/3.glb" camera-controls auto-rotate></model-viewer>
-        <model-viewer src="4 - digital/modeli/5.glb" camera-controls auto-rotate></model-viewer>
-        <model-viewer src="4 - digital/modeli/4.glb" camera-controls auto-rotate></model-viewer>
-        <model-viewer src="4 - digital/modeli/6.glb" camera-controls auto-rotate></model-viewer>
-      </div>
-    </div>
-  </section>
-
-  <div class="fade-to-black"></div>
-
-  <section class="black-section" id="black">
-    <div class="container">
-      
-      <div class="work">
-        <h3>optimism</h3>
-        <p>This is an animation built within a 10x10 grid of repeating squares, punctuated by larger scenes that highlight key moments of the narrative. The piece portrays optimism as an inner drive that pushes us forward through challenges. A small character continually encounters abstract shapes symbolizing obstacles and hardships, yet manages to overcome them, guided by optimism. This persistent willpower leads the character toward brighter, more hopeful situations, illustrating the transformative power of a positive outlook.</p>
-        <video controls>
-          <source src="4 - digital//animacije/1.mp4" type="video/mp4">
-        </video>
-      </div>
-      
-      <div class="work">
-        <h3>silence</h3>
-        <p>This hand-drawn animation reflects on the student protests in Serbia and the use of acoustic weapons against demonstrators on March 15th. Through hand-drawn animation and distorted sound, the work evokes the shift from collective quiet to the disorienting aftermath of a sound cannon.
-        Moving between the public space of protest and the private space of denial, Silence explores how violence resonates beyond the moment of its occurrence, lingering as muffled hearing, tinnitus, and fractured perception.</p>
-        <video controls>
-          <source src="4 - digital//animacije/2.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="work">
-        <h3>fish and aquarium</h3>
-        <p>This work presents a surreal companionship between a fish and aquarium. The glass tank, expressionless and opaque in its stillness, can only move when guided by the fish that inhabits it. Acting as both navigator and catalyst, the fish leads the aquarium beyond the sea into unfamiliar landscapes, transforming the vessel of containment into a vessel of exploration. By displacing the aquarium from its natural environment, the animation reflects on interdependence, freedom, and the paradox of mobility within boundaries. The fish’s curiosity expands the world of its fragile container, suggesting that even within transparent walls, movement and discovery remain possible.</p>
-        <video controls>
-          <source src="4 - digital//animacije/3.mov" type="video/mp4">
-        </video>
-      </div>
-
     </div>
   </section>
 
@@ -376,27 +233,6 @@
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
   <script>
-    const headerLeft = document.querySelector("header .left");
-    const headerLinks = document.querySelectorAll("header a, header .left");
-
-    window.addEventListener("scroll", () => {
-      const white = document.getElementById("white").offsetTop;
-      const orange = document.getElementById("orange").offsetTop;
-      const black = document.getElementById("black").offsetTop;
-      const scroll = window.scrollY + 200;
-
-      if (scroll >= black) {
-        headerLeft.textContent = "digital & motion / animations";
-        headerLinks.forEach(el => el.style.color = "white");
-      } else if (scroll >= orange) {
-        headerLeft.textContent = "digital & motion / 3D models";
-        headerLinks.forEach(el => el.style.color = "black");
-      } else {
-        headerLeft.textContent = "digital & motion / illustrations";
-        headerLinks.forEach(el => el.style.color = "#c76d00");
-      }
-    });
-
     const sliders = document.querySelectorAll(".slideshow-container");
     const slideIndexes = {};
 
